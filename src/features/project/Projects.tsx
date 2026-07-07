@@ -1,0 +1,97 @@
+// src/features/projects/Projects.tsx
+import React from 'react';
+import { useProjects } from './hooks/useProjects';
+
+
+export const Projects: React.FC = () => {
+    const { projects, loading, error } = useProjects();
+
+    return (
+        <section id="projects" className="py-24 px-8 md:px-16 max-w-6xl mx-auto ">
+        
+            {/* Section Header */}
+            <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
+                    Deployed Modules
+                </h2>
+                <div className="flex gap-1">
+                    <div className="w-12 h-1.5 bg-red-800 rounded"></div>
+                    <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
+                </div>
+                </div>
+                <a href="https://github.com/whyme-duh" target="_blank" rel="noreferrer" className="text-sm font-bold text-gray-500 hover:text-red-800 transition-colors uppercase tracking-widest flex items-center gap-2">
+                View GitHub Repository 
+                <span className="text-lg">&rarr;</span>
+                </a>
+            </div>
+
+            {loading && (
+                <div className="text-center py-12 text-gray-500 font-mono animate-pulse">
+                Retrieving Data...
+                </div>
+            )}
+            {error && (
+                <div className="p-6 bg-red-50 text-red-800 border border-red-200 rounded-xl font-mono text-sm">
+                {error}
+                </div>
+            )}
+
+            {/* Projects Grid */}
+            {!loading && !error && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project) => (
+                <div 
+                key={project.id} 
+                className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:border-red-800 transition-all duration-300 flex flex-col justify-between"
+                >
+                <div>
+                    <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-800 transition-colors">
+                        {project.name}
+                    </h3>
+                    <span className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded border ${
+                        project.status === 'Deployed' ? 'bg-green-50 text-green-700 border-green-200' : 
+                        project.status === 'In Development' ? 'bg-orange-50 text-orange-700 border-orange-200' : 
+                        'bg-gray-50 text-gray-600 border-gray-200'
+                    }`}>
+                        {project.status}
+                    </span>
+                    </div>
+                    
+                    <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+                    {project.content}
+                    </p>
+                </div>
+
+                <div>
+                    {/* Tech Stack Array Mapping */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech_stacks && project.tech_stacks.map((tech, index) => (
+                        <span key={index} className="px-2 py-1 bg-gray-50 border border-gray-200 rounded font-mono text-[10px] text-gray-600 uppercase tracking-wider">
+                        {tech}
+                        </span>
+                    ))}
+                    </div>
+
+                    <div className="flex gap-4 border-t border-gray-100 pt-4">
+                    {project.view_link && (
+                        <a href={project.view_link} className="text-xs font-bold text-gray-900 hover:text-red-800 uppercase tracking-widest transition-colors">
+                        Live Demo
+                        </a>
+                    )}
+                    {project.source_code && (
+                        <a href={project.source_code} className="text-xs font-bold text-gray-500 hover:text-gray-900 uppercase tracking-widest transition-colors">
+                        Source Code
+                        </a>
+                    )}
+                    </div>
+                </div>
+                </div>
+            ))}
+            </div>
+        )}
+        
+        </section>
+  );
+};

@@ -1,0 +1,16 @@
+const BASE_URL = "http://127.0.0.1:8000/api";
+
+export const apiClient = {
+    get: async <T>(endpoint: string): Promise<T> => {
+        const response = await fetch(`${BASE_URL}${endpoint}`,{
+            method: 'GET',
+            headers:{
+                'Content-Type': 'application/json',
+            }
+        });
+        if (!response.ok){
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    }
+}
