@@ -42,9 +42,9 @@ export const Certifications: React.FC = () => {
             
             {/* Ledger Header (Hidden on small screens for cleaner mobile UI) */}
             <div className="hidden md:grid grid-cols-12 gap-4 p-6 bg-gray-50 border-b border-gray-100 text-xs font-bold text-gray-400 uppercase tracking-widest">
-            <div className="col-span-4">Credential </div>
+            <div className="col-span-4">Title </div>
             <div className="col-span-2">Issuer</div>
-            <div className="col-span-2">Date</div>
+            <div className="col-span-2">Completed Date</div>
             <div className="col-span-3 text-right">Associated Skills</div>
             </div>
 
@@ -59,7 +59,7 @@ export const Certifications: React.FC = () => {
                     {/* Title & Issuer (Spans 5 cols on desktop) */}
                     <div className="md:col-span-4">
                         <a href={cred.credential_url}>
-                            <h3 className="text-sm font-bold text-gray-900 group-hover:text-red-800 transition-colors">
+                            <h3 className="text-sm font-bold text-gray-900 hover:text-blue-400 transition-colors">
                         {cred.name}
                         </h3>
                         </a>
@@ -68,7 +68,7 @@ export const Certifications: React.FC = () => {
 
                     {/* Category */}
                     <div className="md:col-span-2">
-                        <h3 className="text-sm font-bold text-gray-900 group-hover:text-red-800 transition-colors">
+                        <h3 className="text-sm font-bold text-gray-900">
                         {cred.issuing_organization}
                         </h3>
                     </div>
@@ -83,11 +83,11 @@ export const Certifications: React.FC = () => {
 
                     
                     <div className="md:col-span-4">
-                        <div className="flex flex-wrap gap-1.5">
+                        <div className="flex flex-wrap justify-center gap-1.5">
                         {cred.skills?.map((skill) => (
                             <span 
                             key={skill.id} 
-                            className="inline-block px-2 py-0.5 text-[10px] font-mono text-gray-600 bg-white border border-gray-200 rounded"
+                            className="inline-block px-2 py-0.5 text-[10px] font-mono text-gray-600 bg-white border border-gray-200 rounded hover:bg-gray-100 transition-colors"
                             >
                             {skill.item}
                             </span>

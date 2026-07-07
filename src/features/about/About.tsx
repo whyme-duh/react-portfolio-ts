@@ -37,7 +37,7 @@ export const About: React.FC = () => {
 
         <div className="lg:col-span-2 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col justify-center">
           <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Professional Summary</h3>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+          <p className="text-lg md:text-md text-gray-700 leading-relaxed font-medium">
             {aboutData.about_me_content}
           </p>
         </div>

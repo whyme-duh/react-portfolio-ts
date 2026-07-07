@@ -2,8 +2,11 @@
 import React from 'react';
 import { useProjects } from './hooks/useProjects';
 
+interface ProjectsProps{
+    onSelectProject ?: (project:any) => void;
+}
 
-export const Projects: React.FC = () => {
+export const Projects: React.FC<ProjectsProps> = ({onSelectProject }) => {
     const { projects, loading, error } = useProjects();
 
     return (
@@ -43,6 +46,7 @@ export const Projects: React.FC = () => {
             {projects.map((project) => (
                 <div 
                 key={project.id} 
+                onClick={() => onSelectProject && onSelectProject(project)}
                 className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:border-red-800 transition-all duration-300 flex flex-col justify-between"
                 >
                 <div>
@@ -55,7 +59,7 @@ export const Projects: React.FC = () => {
                         project.status === 'In Development' ? 'bg-orange-50 text-orange-700 border-orange-200' : 
                         'bg-gray-50 text-gray-600 border-gray-200'
                     }`}>
-                        {project.status}
+                        {project.status || "In Development"}
                     </span>
                     </div>
                     
