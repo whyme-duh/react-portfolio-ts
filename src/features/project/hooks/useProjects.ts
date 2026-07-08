@@ -23,8 +23,7 @@ export const useProjects = () => {
     useEffect(()=>{
         const fetchProjects = async () => {
             try{
-                const data = await apiClient.get<Project[]>('/projects/');
-                console.log(data);
+                const data = await apiClient.get<Project[]>('/featuredprojects/');
                 const projectList = (data as any).results ? (data as any).results : data;
                 setProjects(projectList);
                 setError(null);

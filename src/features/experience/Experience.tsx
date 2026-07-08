@@ -54,7 +54,7 @@ export const Experience: React.FC = () => {
               {/* Title & Role block (Strict vertical spacing) */}
               <div className="flex flex-col gap-1">
                 <h3 className="font-bold text-xl text-gray-900 leading-tight">
-                  {exp.role}
+                  {exp.title}
                 </h3>
                 <div className="flex items-center gap-2 text-blue-800 font-medium">
                    {/* Optional briefcase icon for visual anchor */}
@@ -67,7 +67,7 @@ export const Experience: React.FC = () => {
               
               {/* Year Tag (Pushed to top right on desktop, aligned left on mobile) */}
               <span className="inline-flex items-center px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 text-xs font-mono uppercase tracking-widest rounded-md whitespace-nowrap h-fit shrink-0">
-                {exp.year}
+                {exp.start_date} - {exp.end_date}
               </span>
             </div>
             

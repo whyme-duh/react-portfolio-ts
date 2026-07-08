@@ -1,39 +1,37 @@
 import React, { useEffect } from 'react';
+import {useParams} from 'react-router-dom';
+import { useProjectDetail } from './hooks/useProjectDetail';
 
-interface Project {
-    id : number,
-    name : string,
-    brief_content: string,
-    content : string,
-    source_code : string,
-    view_link : string,
-    category : string,
-    featured: boolean,
-    slug : string,
-    status : string,
-    tech_stacks: string[]
-}
 
-interface ProjectDetailProps {
-  project: Project;
-  onBack: () => void;
-}
+export const ProjectDetail: React.FC = () => {
+  const {slug} = useParams();
+  const {project, loading, error} = useProjectDetail(slug);
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#fdfbf7]">
+        <div className="font-mono text-gray-500 animate-pulse">Retrieving system data...</div>
+      </div>
+    );
+  }
 
-export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
-  
-  // Ensure we scroll to top when a project is selected
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // 2. Handle Error State
+  if (error || !project) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#fdfbf7]">
+        <div className="font-mono text-red-500">
+          {error || "Project not found."}
+        </div>
+      </div>
+    );
+  }
 
   return (
+    
     <div className="min-h-screen bg-[#fdfbf7] py-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="max-w-5xl mx-auto px-6">
         
-        {/* --- Navigation Header --- */}
         <header className="flex items-center justify-between mb-12">
           <button 
-            onClick={onBack}
             className="group flex items-center gap-2 text-slate-500 hover:text-blue-800 transition-all font-bold text-xs uppercase tracking-widest"
           >
             <span className="group-hover:-translate-x-1 transition-transform">←</span>
