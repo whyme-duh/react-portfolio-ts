@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import { apiClient } from '../../../api/client';
 
+export interface TechStack{
+    id:number;
+    category:string;
+    item:string;
+}
+
 export interface Project {
     id : number,
     name : string,
@@ -12,7 +18,7 @@ export interface Project {
     featured: boolean,
     slug : string,
     status : string,
-    tech_stacks: string[]
+    tech_stacks: TechStack[]
 }
 
 export const useProjects = () => {

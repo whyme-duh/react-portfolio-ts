@@ -49,7 +49,7 @@ export const Experience: React.FC = () => {
           <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
             
             {/* Header Grid: Role, Company, Year */}
-            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-5 pb-5 border-b border-gray-50">
+            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-1 pb-5 border-b border-gray-50">
               
               {/* Title & Role block (Strict vertical spacing) */}
               <div className="flex flex-col gap-1">
@@ -66,13 +66,13 @@ export const Experience: React.FC = () => {
               </div>
               
               {/* Year Tag (Pushed to top right on desktop, aligned left on mobile) */}
-              <span className="inline-flex items-center px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 text-xs font-mono uppercase tracking-widest rounded-md whitespace-nowrap h-fit shrink-0">
+              <span className="inline-flex w-fit items-center px-3 py-1.5 bg-gray-50 border border-gray-200 text-gray-600 text-xs font-mono uppercase tracking-widest rounded-md whitespace-nowrap h-fit shrink-0">
                 {exp.start_date} - {exp.end_date}
               </span>
             </div>
             
             {/* Body Text */}
-            <p className="text-gray-600 leading-relaxed text-sm md:text-justify">
+            <p className="text-gray-600 leading-relaxed text-sm text-justify">
               {exp.description}
             </p>
             

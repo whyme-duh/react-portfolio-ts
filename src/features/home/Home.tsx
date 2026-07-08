@@ -39,11 +39,11 @@ export const Home: React.FC = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col items-start text-left">
-                <h1 className="text-xl md:text-2xl font-semibold text-gray-900 mb-2">
+            <div className="flex flex-col items-center lg:items-start md:items-start md:text-left sm:text-center mt-5">
+                <h1 className="text-xl md:text-2xl font-semibold text-gray-900 mb-2 text-center">
                 Hi, My name is <span className="md:text-4xl text-black-900 font-bold">Ritik Lal Shrestha</span>
                 </h1>
-                <h2 className="text-2xl md:text-4xl font-bold text-gray-400 mb-6">
+                <h2 className="text-2xl md:text-4xl font-bold text-gray-400 mb-3 lg:mb-5">
                 aka. Whyme-duh
                 </h2>
                 
@@ -52,7 +52,7 @@ export const Home: React.FC = () => {
                 </p>
 
                 <div className="flex gap-4">
-                <a href={bio.file} download className="px-6 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 border-blue-500 transition-colors">
+                <a href={bio.file} download className="lg:px-6 px-4 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 border-blue-500 transition-colors">
                     VIEW MY RESUME
                 </a>
                 <a href="#contact" className="px-6 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 transition-colors">
