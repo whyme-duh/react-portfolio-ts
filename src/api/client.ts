@@ -1,4 +1,13 @@
-const BASE_URL = "http://127.0.0.1:8000/api";
+
+let BASE_URL ="";
+const debug= true;
+if (debug){
+    BASE_URL = "http://127.0.0.1:8000/api";
+}
+else{
+    BASE_URL = "https://shrestharitikapi.pythonanywhere.com/api";
+
+}
 
 export const apiClient = {
     get: async <T>(endpoint: string): Promise<T> => {
@@ -14,3 +23,4 @@ export const apiClient = {
         return response.json();
     }
 }
+
