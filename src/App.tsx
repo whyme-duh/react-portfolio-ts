@@ -41,6 +41,12 @@ function App() {
               <ProjectList/>
               </>
               }/>
+              <Route path= "/experiences/" element={
+              <>
+              <NavbarWithLinks/>
+              <Experience/>
+              </>
+              }/>
               <Route path= "/about/" element={
               <>
               <NavbarWithLinks/>

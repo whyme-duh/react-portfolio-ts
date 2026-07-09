@@ -53,7 +53,7 @@ export const Experience: React.FC = () => {
               
               {/* Title & Role block (Strict vertical spacing) */}
               <div className="flex flex-col gap-1">
-                <h3 className="font-bold text-xl text-gray-900 leading-tight">
+                <h3 className="font-bold text-xl text-gray-900 leading-tight text-left">
                   {exp.title}
                 </h3>
                 <div className="flex items-center gap-2 text-blue-800 font-medium">

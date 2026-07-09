@@ -21,7 +21,7 @@ export const About: React.FC = () => {
   }
   const backendTech = aboutData?.tech_stack?.filter(tech => tech.category === 'backend') || [];
   const frontendTech = aboutData?.tech_stack?.filter(tech => tech.category === 'frontend') || [];
-  const dataOpsTech = aboutData?.tech_stack?.filter(tech => tech.category === 'data_ops') || [];
+  const dataOpsTech = aboutData?.tech_stack?.filter(tech => tech.category === 'tools') || [];
   return (
   <section id="about" className="py-24 px-8 md:px-16 max-w-6xl mx-auto bg-sky-50/50">
     <div className="mb-12">
@@ -84,7 +84,7 @@ export const About: React.FC = () => {
             <span className="block text-[10px] text-gray-400 uppercase tracking-widest mb-3 font-bold">Frontend & UI</span>
             <div className="flex flex-wrap gap-2">
               {frontendTech.map((tech) => (
-                <span key={tech.id} className="px-3 py-1.5 bg-gray-900 text-white rounded font-mono text-xs shadow-sm">
+                <span key={tech.id} className="px-3 py-1.5 bg-gray-100 text-black rounded font-mono text-xs shadow-sm">
                   {tech.item}
                 </span>
               ))}
