@@ -39,14 +39,14 @@ export const Contacts: React.FC = () => {
           
           <div className="p-6 border border-gray-100 bg-gray-50 rounded-xl hover:border-gray-300 transition-colors">
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Professional Network</p>
-            <a href="#" className="font-mono text-gray-900 hover:text-red-800 transition-colors font-bold text-lg">
+            <a href="https://linkedin.com/in/ritik-shrestha-5617531b1/" className="font-mono text-gray-900 hover:text-red-800 transition-colors font-bold md:text-lg text-sm">
               linkedin.com/in/whyme-duh
             </a>
           </div>
 
           <div className="p-6 border border-gray-100 bg-gray-50 rounded-xl hover:border-gray-300 transition-colors">
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Code Repository</p>
-            <a href="https://github.com/whyme-duh" className="font-mono text-gray-900 hover:text-red-800 transition-colors font-bold text-lg">
+            <a href="https://github.com/whyme-duh" className="font-mono text-gray-900 hover:text-red-800 transition-colors font-bold md:text-lg text-sm">
               github.com/whyme-duh
             </a>
           </div>
