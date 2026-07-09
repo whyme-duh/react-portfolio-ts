@@ -9,7 +9,7 @@ export const Home: React.FC = () => {
     if (loading) {
         return (
         <section className="min-h-[80vh] flex items-center justify-center">
-            <div className="font-mono text-gray-500 animate-pulse">Loading Operator Profile...</div>
+            <div className="font-mono text-gray-500 animate-pulse">Loading Profile...</div>
         </section>
         );
     }

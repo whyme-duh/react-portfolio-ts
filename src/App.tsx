@@ -53,6 +53,12 @@ function App() {
               <About/>
               </>
               }/>
+              <Route path= "/certifications/" element={
+              <>
+              <NavbarWithLinks/>
+              <Certifications/>
+              </>
+              }/>
               <Route path= "/contact/" element={
               <>
               <NavbarWithLinks/>

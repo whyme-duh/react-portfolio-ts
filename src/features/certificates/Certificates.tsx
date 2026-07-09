@@ -29,7 +29,7 @@ export const Certifications: React.FC = () => {
         {/* Section Header */}
         <div className="mb-12">
             <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
-            Verified Credentials
+            Verified Certifications
             </h2>
             <div className="flex gap-1">
             <div className="w-12 h-1.5 bg-red-800 rounded"></div>

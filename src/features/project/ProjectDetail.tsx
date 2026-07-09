@@ -41,19 +41,23 @@ export const ProjectDetail: React.FC = () => {
           className="group flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-blue-800 transition-colors mb-12"
         >
           <span className="group-hover:-translate-x-1 transition-transform">&larr;</span> 
-          Back to Dashboard
+          Back to Home
         </Link>
 
         {/* Header Metadata */}
-        <header className="mb-12">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="px-2 py-0.5 bg-blue-50 text-blue-800 text-[10px] font-bold uppercase tracking-widest rounded">
-              {project.status || "Deployed"}
-            </span>
-          </div>
+        <header className="mb-12 text-left">
+          
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
             {project.name}
           </h1>
+          <div className="flex items-start gap-3 mb-4">
+            <span className="px-2 py-0.5 bg-blue-50 text-blue-800 text-[10px] font-bold uppercase tracking-widest rounded">
+              {project.status || "Deployed"}
+            </span>
+            <span className="px-2 py-0.5 bg-gray-100 text-black text-[10px] font-bold uppercase tracking-widest rounded">
+              {project.category || "Website"}
+            </span>
+          </div>
           <p className="text-xl text-gray-600 leading-relaxed">
             {project.brief_content}
           </p>
@@ -62,7 +66,7 @@ export const ProjectDetail: React.FC = () => {
         {/* Content Body (Blog Style) */}
         <div className="prose prose-gray prose-lg max-w-none text-gray-800">
           
-          <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900">Technical Inventory</h2>
+          <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900 text-left">Technical Inventory</h2>
           <div className="flex flex-wrap gap-2 not-prose mb-12">
             {project.tech_stacks.map((tech) => (
               <span key={tech.id} className="px-3 py-1 bg-white border border-gray-200 rounded font-mono text-xs text-gray-600">
@@ -71,7 +75,7 @@ export const ProjectDetail: React.FC = () => {
             ))}
           </div>
 
-          <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900">Architecture Overview</h2>
+          <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900 text-left">Project Overview</h2>
             
           <div 
             className="prose prose-lg prose-gray max-w-none text-left prose-a:text-blue-800 hover:prose-a:text-blue-600 prose-headings:text-gray-900 prose-img:rounded-xl"

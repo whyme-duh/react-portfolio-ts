@@ -18,6 +18,7 @@ export const Navbar: React.FC = () => {
           <a href="/#about" className="hover:text-blue-800 transition-colors">About</a>
           <a href="/#experience" className="hover:text-blue-800 transition-colors">Experience</a>
           <a href="/#projects" className="hover:text-blue-800 transition-colors">Projects</a>
+          <a href="/#certifications" className="hover:text-blue-800 transition-colors">Certificates</a>
           <a href="/#contact" className="hover:text-blue-800 transition-colors">Contacts</a>
         </div>
 
@@ -53,6 +54,7 @@ export const Navbar: React.FC = () => {
           <a href="/#about" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">About</a>
           <a href="/#experience" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Experience</a>
           <a href="/#projects" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Projects</a>
+          <a href="/#certifications" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Certificates</a>
           <a href="/#contact" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Contacts</a>
         </div>
       </div>
