@@ -1,6 +1,5 @@
 import React from 'react';
 import {useAbout} from './hooks/useAbout';
-import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const About: React.FC = () => {
   

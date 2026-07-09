@@ -1,7 +1,6 @@
 import React from 'react';
 import { useBio } from './hooks/useBio';
 import { FaGithub, FaInstagram, FaLinkedin, FaPinterest } from 'react-icons/fa';
-import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const Home: React.FC = () => {
 
