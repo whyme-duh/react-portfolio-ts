@@ -1,11 +1,16 @@
 import React from 'react';
 import {Link, useParams} from 'react-router-dom';
 import { useProjectDetail } from './hooks/useProjectDetail';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 
 export const ProjectDetail: React.FC = () => {
+
   const {slug} = useParams();
   const {project, loading, error} = useProjectDetail(slug);
+  useDocumentTitle(project?.name || project?.name || "Loading...");
+
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#fdfbf7]">
@@ -67,25 +72,13 @@ export const ProjectDetail: React.FC = () => {
           </div>
 
           <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900">Architecture Overview</h2>
-          <p className="leading-relaxed mb-6">
-            Detailed documentation for this system is currently being compiled. This section is structured to pull structured documentation directly from your DRF API, allowing for comprehensive technical case studies.
-          </p>
+            
+          <div 
+            className="prose prose-lg prose-gray max-w-none text-left prose-a:text-blue-800 hover:prose-a:text-blue-600 prose-headings:text-gray-900 prose-img:rounded-xl"
+            dangerouslySetInnerHTML={{ __html: project.content }}
+          />
 
-          <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900">Key Features</h2>
-          <ul className="space-y-3 mb-12">
-            <li className="flex gap-3">
-              <span className="text-blue-800 font-bold">•</span>
-              <span>Modular architecture designed for scalability and high availability.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-blue-800 font-bold">•</span>
-              <span>Optimized data flow using DRF serializer depth management.</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-blue-800 font-bold">•</span>
-              <span>End-to-end type safety with TypeScript interfaces.</span>
-            </li>
-          </ul>
+          
 
         </div>
 

@@ -86,8 +86,8 @@ export const Projects: React.FC = () => {
                         </div>
                         <span className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded border ${
                                 project.status === 'Deployed' ? 'bg-green-50 text-green-700 border-green-200' : 
-                                project.status === 'Under Development' ? 'bg-orange-50 text-orange-700 border-orange-200' : 
-                                'bg-gray-50 text-gray-600 border-gray-200'
+                                project.status === 'Under-Development' ? 'bg-orange-50 text-orange-700 border-orange-200' : 
+                                'bg-blue-50 text-blue-600 border-gray-200'
                             }`}>
                                 {project.status}
                         </span>

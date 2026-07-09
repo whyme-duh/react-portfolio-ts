@@ -1,8 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { useProjectList } from './hooks/useProjectList';
+import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const ProjectList:React.FC = () => {
+    useDocumentTitle("Projects");
+
     const {projects, loading, error } = useProjectList();
     return (
         <>
