@@ -27,7 +27,7 @@ export const Home: React.FC = () => {
       
             <div className="w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
                 <img 
-                src={bio.front_image || "/placeholder.jpg"}
+                src={bio.profile_image || "/placeholder.jpg"}
                 alt="Profile" 
                 className="w-full h-full object-cover rounded-full shadow-lg"
                 />
@@ -52,7 +52,7 @@ export const Home: React.FC = () => {
                 </p>
 
                 <div className="flex gap-4">
-                <a href={bio.file} download className="lg:px-6 px-4 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 border-blue-500 transition-colors">
+                <a href={bio.cv_file} download className="lg:px-6 px-4 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 border-blue-500 transition-colors">
                     VIEW MY RESUME
                 </a>
                 <a href="#contact" className="px-6 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 transition-colors">

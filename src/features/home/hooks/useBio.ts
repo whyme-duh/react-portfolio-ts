@@ -3,10 +3,8 @@ import {apiClient} from '../../../api/client';
 
 export interface Bio{
     id : number;
-    logo : string | null;
-    file : string;
-    about_me_image: string | null;
-    front_image : string | null;
+    cv_file : string;
+    profile_image : string | null;
     linkedin : string | null;
     description : string | null;
     instagram : string | null;
