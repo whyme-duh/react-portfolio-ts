@@ -73,11 +73,12 @@ export const Projects: React.FC = () => {
 
                     <div className="flex justify-between items-center gap-4 border-t border-gray-100 pt-4">
                         <div className="btn-groups flex gap-2">
-                            {project.view_link && (
+                            {project.category === "Mobile App" || project.view_link  && (
                             <a href={project.view_link} className="text-xs font-bold text-gray-900 hover:text-red-800 uppercase tracking-widest transition-colors">
                             Live Demo
                             </a>
-                            )}
+                            )
+                            }
                             {project.source_code && (
                                 <a href={project.source_code} className="text-xs font-bold text-gray-500 hover:text-gray-900 uppercase tracking-widest transition-colors">
                                 Source Code
@@ -87,7 +88,7 @@ export const Projects: React.FC = () => {
                         <span className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded border ${
                                 project.status === 'Deployed' ? 'bg-green-50 text-green-700 border-green-200' : 
                                 project.status === 'Under-Development' ? 'bg-orange-50 text-orange-700 border-orange-200' : 
-                                'bg-blue-50 text-blue-600 border-gray-200'
+                                'bg-blue-50 text-blue-600 border-blue-200'
                             }`}>
                                 {project.status}
                         </span>

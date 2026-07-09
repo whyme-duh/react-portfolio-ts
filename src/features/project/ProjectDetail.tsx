@@ -51,11 +51,15 @@ export const ProjectDetail: React.FC = () => {
             {project.name}
           </h1>
           <div className="flex items-start gap-3 mb-4">
-            <span className="px-2 py-0.5 bg-blue-50 text-blue-800 text-[10px] font-bold uppercase tracking-widest rounded">
-              {project.status || "Deployed"}
+            <span className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded border ${
+                project.status === 'Deployed' ? 'bg-green-50 text-green-700 border-green-200' : 
+                project.status === 'Under-Development' ? 'bg-orange-50 text-orange-700 border-orange-200' : 
+                'bg-blue-50 text-blue-600 border-blue-200'
+              }`}>
+              {project.status}
             </span>
-            <span className="px-2 py-0.5 bg-gray-100 text-black text-[10px] font-bold uppercase tracking-widest rounded">
-              {project.category || "Website"}
+            <span className="px-2.5 py-1 bg-gray-100 text-black text-[10px] font-bold uppercase tracking-widest rounded">
+              {project.category}
             </span>
           </div>
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -88,7 +92,7 @@ export const ProjectDetail: React.FC = () => {
 
         {/* Footer Actions */}
         <footer className="mt-20 pt-12 border-t border-gray-100 flex gap-4">
-          {project.view_link && (
+          {project.category === "Mobile App" || project.view_link && (
             <a href={project.view_link} className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded hover:bg-blue-800 transition-colors">
               Launch Live Demo
             </a>

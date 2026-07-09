@@ -10,6 +10,7 @@ export interface TechStackItem {
     id : number;
     category: string;
     item : string;
+    focused:boolean|false;
 }
 
 export interface AboutMeData{

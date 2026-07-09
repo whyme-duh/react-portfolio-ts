@@ -1,6 +1,6 @@
 
 let BASE_URL ="";
-const debug= false;
+const debug= true;
 if (debug){
     BASE_URL = "http://127.0.0.1:8000/api";
 }

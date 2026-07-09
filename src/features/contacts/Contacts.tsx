@@ -20,11 +20,11 @@ export const Contacts: React.FC = () => {
             <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
           </div>
           <p className="text-gray-600 leading-relaxed font-medium mb-8">
-            Whether you are looking to discuss system architecture, API integration, or data evaluation, my inbox is open. I am currently based in Kathmandu but operate globally.
+            Whether you are looking to discuss website development, API integration, AI training, or data evaluation, my inbox is open. I am currently based in Kathmandu but operate globally.
           </p>
           
           <a 
-            href="mailto:ritik.shrestha@example.com" 
+            href="mailto:ritikshrestha94@gmail.com" 
             className="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white font-bold uppercase tracking-widest text-sm rounded hover:bg-red-800 transition-colors shadow-md"
           >
             <span>Send Email</span>
