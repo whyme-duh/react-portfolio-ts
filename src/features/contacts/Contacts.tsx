@@ -1,6 +1,4 @@
-// src/features/contact/Contact.tsx
 import React from 'react';
-import { useDocumentTitle } from '../../hooks/useDocumentTitle';
 
 export const Contacts: React.FC = () => {
   
