@@ -8,7 +8,7 @@ import { ScrollToTop } from './components/ScrollToTop.tsx';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-    <ScrollToTop/>
+      <ScrollToTop/>
       <App />
     </BrowserRouter>
   </StrictMode>,

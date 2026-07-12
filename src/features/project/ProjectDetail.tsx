@@ -82,7 +82,7 @@ export const ProjectDetail: React.FC = () => {
           <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900 text-left">Project Overview</h2>
             
           <div 
-            className="prose prose-lg prose-gray max-w-none text-left prose-a:text-blue-800 hover:prose-a:text-blue-600 prose-headings:text-gray-900 prose-img:rounded-xl"
+            className="prose prose-lg prose-gray max-w-none text-justify prose-a:text-blue-800 hover:prose-a:text-blue-600 prose-headings:text-gray-900 prose-img:rounded-xl"
             dangerouslySetInnerHTML={{ __html: project.content }}
           />
 

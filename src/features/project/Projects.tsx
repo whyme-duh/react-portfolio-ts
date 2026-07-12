@@ -47,9 +47,7 @@ export const Projects: React.FC = () => {
                 className="group bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:border-red-800 transition-all duration-300 flex flex-col justify-between"
                 >
                 <div>
-                    
                     <div className="flex flex-col justify-between items-center gap-2 mb-4">
-                        
                         <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-800 transition-colors">
                             {project.name}
                         </h3>
