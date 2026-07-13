@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import { useProjectList } from './hooks/useProjectList';
 import { useDocumentTitle } from '../../hooks/useDocumentTitle';
+import { motion } from 'framer-motion';
 
 export const ProjectList:React.FC = () => {
     useDocumentTitle("Projects");
@@ -9,16 +10,39 @@ export const ProjectList:React.FC = () => {
     const {projects, loading, error } = useProjectList();
     return (
         <>
-        <section id="projects" className="py-24 px-8 md:px-16 max-w-6xl mx-auto ">
+        <section id="projects" className="py-12 px-4 md:px-16 max-w-6xl mx-auto ">
+            <div className="mb-12">
+                <div>
+                    <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
+                        My Projects
+                    </h2>
+                    
+                </div>
+                
+            </div>
+            {loading && (
+                <div className="text-center py-12 text-gray-500 font-mono animate-pulse">
+                Retrieving Data...
+                </div>
+            )}
+            {error && (
+                <div className="p-6 bg-red-50 text-red-800 border border-red-200 rounded-xl font-mono text-sm">
+                {error}
+                </div>
+            )}
             {!loading && !error && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
                 <Link 
                 key={project.id} 
                 to={`/project/${project.slug}`}
                 className="group bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:border-red-800 transition-all duration-300 flex flex-col justify-between"
                 >
-                <div>
+                <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }} // Triggers when element is 100px in view
+                    transition={{ duration: 0.5, delay: index * 0.1 }}>
                     
                     <div className="flex flex-col justify-between items-center gap-2 mb-4">
                         
@@ -31,7 +55,7 @@ export const ProjectList:React.FC = () => {
                     <p className="text-gray-600 mb-6 text-sm leading-relaxed">
                     {project.brief_content}
                     </p>
-                </div>
+                </motion.div>
 
                 <div>
                     {/* Tech Stack Array Mapping */}

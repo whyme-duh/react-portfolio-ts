@@ -11,6 +11,7 @@ import {Navbar} from './components/Navbar';
 import {NavbarWithLinks} from './components/NavbarWithLinks';
 import {Routes, Route} from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { PageTransition } from './components/PageTransition';
 
 function App() {
   return (
@@ -35,10 +36,17 @@ function App() {
                 <Outlet /> 
               </>
             }>
-            <Route path="/project/:slug" element={<ProjectDetail />} />
+            <Route path="/project/:slug" element={
+              <PageTransition>
+                <ProjectDetail />
+              </PageTransition>
+              
+              } />
             <Route path="/projects" element={<ProjectList />} />
             <Route path="/experiences" element={<Experience />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={
+              <PageTransition><About /></PageTransition>
+              } />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/contact" element={<Contacts />} />
             </Route>

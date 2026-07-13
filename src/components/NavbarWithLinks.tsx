@@ -13,7 +13,6 @@ export const NavbarWithLinks: React.FC = () => {
           RS.
         </Link>
 
-        {/* Desktop Navigation (Hidden on Mobile) */}
         <div className="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
           <Link to="/about" className="hover:text-blue-800 transition-colors">About</Link>
           <Link to="/experiences" className="hover:text-blue-800 transition-colors">Experiences</Link>
@@ -22,20 +21,17 @@ export const NavbarWithLinks: React.FC = () => {
           <Link to="/contact" className="hover:text-blue-800 transition-colors">Contacts</Link>
         </div>
 
-        {/* Mobile Hamburger Button (Hidden on Desktop) */}
         <button 
           className="md:hidden p-2 text-gray-600 hover:text-blue-800 transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation menu"
         >
           {isOpen ? (
-            // Close (X) Icon
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 6 6 18"></path>
               <path d="m6 6 12 12"></path>
             </svg>
           ) : (
-            // Hamburger Icon
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="4" x2="20" y1="12" y2="12"></line>
               <line x1="4" x2="20" y1="6" y2="6"></line>
@@ -53,8 +49,8 @@ export const NavbarWithLinks: React.FC = () => {
         <div className="flex flex-col px-6 py-4 space-y-4 font-medium text-gray-800 shadow-inner">
           <Link to="/about" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">About</Link>
           <Link to="/experiences" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Experience</Link>
-          <Link to="/experiences" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Certificates</Link>
           <Link to="/projects" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Projects</Link>
+          <Link to="/certifications" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Certificates</Link>
           <Link to="/contact" onClick={closeMenu} className="block w-full hover:text-blue-800 transition-colors">Contacts</Link>
         </div>
       </div>

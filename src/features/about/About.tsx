@@ -24,13 +24,13 @@ export const About: React.FC = () => {
   const dataOpsTech = aboutData?.tech_stack?.filter(tech => tech.category === 'data&ops')?.sort((a,b) => Number(b.focused) - Number(a.focused)) || [];
   const tools = aboutData?.tech_stack?.filter(tech => tech.category === 'tools')?.sort((a,b) => Number(b.focused) - Number(a.focused)) || [];
   return (
-  <section id="about" className="py-24 px-8 md:px-16 max-w-6xl mx-auto bg-sky-50/50">
+  <section id="about" className="py-12 px-4 md:px-16 max-w-6xl mx-auto bg-sky-50/50">
     <div className="mb-12">
       <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
         About Me
       </h2>
-      <div className="flex gap-1">
-        <div className="w-12 h-1.5 bg-blue-800 rounded"></div>
+      <div className="flex gap-1 items-center">
+        <div className="w-12 h-1.5 bg-blue-800 rounded "></div>
         <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
       </div>
     </div>

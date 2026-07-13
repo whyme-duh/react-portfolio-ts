@@ -1,15 +1,14 @@
-// src/features/projects/Projects.tsx
 import React from 'react';
 import { useProjects } from './hooks/useProjects';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export const Projects: React.FC = () => {
     const { projects, loading, error } = useProjects();
 
     return (
-        <section id="projects" className="py-24 px-8 md:px-16 max-w-6xl mx-auto ">
+        <section id="projects" className="py-12 px-4 md:px-16 max-w-6xl mx-auto ">
         
-            {/* Section Header */}
             <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
                     <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
@@ -20,9 +19,9 @@ export const Projects: React.FC = () => {
                         <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
                     </div>
                 </div>
-                <Link to={`/projects/`} className="text-sm font-bold text-gray-500 hover:text-red-800 transition-colors uppercase tracking-widest flex items-center gap-2">
-                View All Projects 
-                <span className="text-lg">&rarr;</span>
+                <Link to={`/projects/`} className="text-sm flex justify-center items-center font-bold text-gray-500 hover:text-red-800 transition-colors uppercase tracking-widest flex items-center gap-2">
+                    View All Projects 
+                    <span className="text-lg">&rarr;</span>
                 </Link>
             </div>
 
@@ -40,13 +39,17 @@ export const Projects: React.FC = () => {
             {/* Projects Grid */}
             {!loading && !error && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
                 <Link 
                 key={project.id} 
                 to={`/project/${project.slug}`}
                 className="group bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:border-red-800 transition-all duration-300 flex flex-col justify-between"
                 >
-                <div>
+                <motion.div key={project.slug}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }} 
+                    transition={{ duration: 0.5, delay: index * 0.1 }}>
                     <div className="flex flex-col justify-between items-center gap-2 mb-4">
                         <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-800 transition-colors">
                             {project.name}
@@ -57,7 +60,7 @@ export const Projects: React.FC = () => {
                     <p className="text-gray-600 mb-6 text-sm leading-relaxed">
                     {project.brief_content}
                     </p>
-                </div>
+                </motion.div>
 
                 <div>
                     {/* Tech Stack Array Mapping */}

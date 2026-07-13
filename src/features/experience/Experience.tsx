@@ -23,7 +23,7 @@ export const Experience: React.FC = () => {
   if (!experience || experience.length === 0) return null;
 
   return (
-    <section id="experience" className="py-24 px-8 md:px-16 max-w-6xl mx-auto bg-white">
+    <section id="experience" className="py-12 px-4 md:px-16 max-w-6xl mx-auto bg-white">
       
       <div className="mb-16">
     <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
@@ -37,10 +37,10 @@ export const Experience: React.FC = () => {
 
   {/* Timeline Container */}
   <div className="max-w-4xl mx-auto">
-    <div className="relative border-l-2 border-gray-200 ml-4 md:ml-6 space-y-10">
+    <div className="relative border-l-2 border-gray-200 ml-2 md:ml-6 space-y-10">
       
       {experience.map((exp) => (
-        <div key={exp.id} className="relative pl-8 md:pl-12 group">
+        <div key={exp.id} className="relative pl-4 md:pl-12 group">
           
           {/* Timeline Dot (Sharper focus state) */}
           <div className="absolute -left-[9px] top-1.5 w-4 h-4 bg-white border-[3px] border-gray-300 group-hover:border-blue-800 rounded-full transition-colors duration-300"></div>

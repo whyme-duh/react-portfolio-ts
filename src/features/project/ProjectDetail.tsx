@@ -32,7 +32,7 @@ export const ProjectDetail: React.FC = () => {
 
   return (
     
-    <div className="min-h-screen bg-[#fdfbf7] py-20 px-8">
+    <div className="min-h-screen bg-[#fdfbf7] py-10 px-4">
       <article className="max-w-3xl mx-auto">
         
         {/* Navigation */}

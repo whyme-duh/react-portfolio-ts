@@ -24,7 +24,7 @@ export const Certifications: React.FC = () => {
     }
     if (!certification || certification.length === 0) return null;
     return (
-        <section id="certifications" className="py-24 px-8 md:px-16 max-w-6xl mx-auto bg-[#fdfbf7]">
+        <section id="certifications" className="py-12 px-4 md:px-16 max-w-6xl mx-auto bg-[#fdfbf7]">
         
         {/* Section Header */}
         <div className="mb-12">

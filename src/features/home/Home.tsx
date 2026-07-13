@@ -23,7 +23,7 @@ export const Home: React.FC = () => {
     }
 
     return (
-        <section id="home" className="flex flex-col md:flex-row items-center justify-center min-h-[90vh] px-8 md:px-16 gap-12 max-w-6xl mx-auto">
+        <section id="home" className="flex flex-col md:flex-row items-center justify-center min-h-[90vh] px-4 pb-8 md:px-16 gap-12 max-w-6xl mx-auto">
       
             <div className="w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
                 <img 
@@ -52,7 +52,8 @@ export const Home: React.FC = () => {
                 </p>
 
                 <div className="flex gap-4">
-                <a href={bio.cv_file} download className="lg:px-6 px-4 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 border-blue-500 transition-colors">
+                    
+                <a href={bio.cv_file} download className="lg:px-6 px-4 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 border-blue-800 transition-colors">
                     VIEW MY RESUME
                 </a>
                 <a href="#contact" className="px-6 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 transition-colors">
