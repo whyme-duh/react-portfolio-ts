@@ -13,9 +13,12 @@ export const ProjectList:React.FC = () => {
         <section id="projects" className="py-12 px-4 md:px-16 max-w-6xl mx-auto ">
             <div className="mb-12">
                 <div>
-                    <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
+                    <motion.h2 initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-20px" }} 
+                    transition={{ duration: 0.5 }} className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
                         My Projects
-                    </h2>
+                    </motion.h2>
                     
                 </div>
                 
@@ -39,9 +42,9 @@ export const ProjectList:React.FC = () => {
                 className="group bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:border-red-800 transition-all duration-300 flex flex-col justify-between"
                 >
                 <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }} // Triggers when element is 100px in view
+                    viewport={{ once: true, margin: "-20px" }} 
                     transition={{ duration: 0.5, delay: index * 0.1 }}>
                     
                     <div className="flex flex-col justify-between items-center gap-2 mb-4">
@@ -57,7 +60,11 @@ export const ProjectList:React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div>
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-20px" }} 
+                    transition={{ duration: 0.5, delay: index * 0.1 }}>
                     {/* Tech Stack Array Mapping */}
                     <div className="flex flex-wrap justify-center items-center gap-2 mb-6">
                     {project.tech_stacks && project.tech_stacks.map((tech) => (
@@ -90,7 +97,7 @@ export const ProjectList:React.FC = () => {
                     
                     </div>
                     
-                </div>
+                </motion.div>
                 </Link>
             ))}
             </div>

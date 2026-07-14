@@ -1,5 +1,6 @@
 import React from 'react';
 import {useAbout} from './hooks/useAbout';
+import { easeIn, motion } from 'framer-motion';
 
 export const About: React.FC = () => {
   
@@ -26,9 +27,14 @@ export const About: React.FC = () => {
   return (
   <section id="about" className="py-12 px-4 md:px-16 max-w-6xl mx-auto bg-sky-50/50">
     <div className="mb-12">
-      <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
+      <motion.h2 
+        initial={{opacity : 0, y : -10}} 
+        whileInView={{opacity: 1, y : 0}}
+        transition={{duration:0.5, ease:easeIn}}
+        viewport={{ once: true, margin: "-100px" }} 
+      className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
         About Me
-      </h2>
+      </motion.h2>
       <div className="flex gap-1 items-center">
         <div className="w-12 h-1.5 bg-blue-800 rounded "></div>
         <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
@@ -37,14 +43,23 @@ export const About: React.FC = () => {
 
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-      <div className="lg:col-span-2 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col justify-center">
+      <motion.div 
+        initial={{opacity : 0, x : -100}} 
+        whileInView={{opacity: 1, x : 0}}
+        viewport={{ once: true, margin: "-100px" }} 
+        transition={{duration:0.5, ease:easeIn}}
+      className="lg:col-span-2 bg-white rounded-2xl p-8 border border-gray-100 shadow-sm flex flex-col justify-center">
         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Professional Summary</h3>
         <p className="text-sm text-justify md:text-md text-gray-700 leading-relaxed font-medium">
           {aboutData.about_me_content}
         </p>
-      </div>
+      </motion.div>
 
-      <div className="lg:col-span-1 bg-gray-900 text-white rounded-2xl p-8 shadow-sm flex flex-col justify-center relative overflow-hidden">
+      <motion.div 
+        initial={{opacity : 0, x : 100}} 
+        whileInView={{opacity: 1, x : 0}}
+        viewport={{ once: true, margin: "-100px" }} 
+        transition={{duration:0.5, ease:easeIn}} className="lg:col-span-1 bg-gray-900 text-white rounded-2xl p-8 shadow-sm flex flex-col justify-center relative overflow-hidden">
         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6 relative z-10">My Hobbies</h3>
         
         <ul className="space-y-4 relative z-10 font-mono text-sm">
@@ -60,9 +75,13 @@ export const About: React.FC = () => {
             <li className="text-gray-500 italic">No pursuits logged.</li>
           )}
         </ul>
-      </div>
+      </motion.div>
 
-      <div className="lg:col-span-3 bg-white rounded-2xl p-8 border-t-4 border-t-blue-800 border-l border-r border-b border-gray-100 shadow-sm flex flex-col justify-center">
+      <motion.div 
+        initial={{opacity : 0, y : 100}} 
+        whileInView={{opacity: 1, y : 0}}
+        viewport={{ once: true, margin: "-100px" }} 
+        transition={{duration:0.5, ease:easeIn, delay:0.1}} className="lg:col-span-3 bg-white rounded-2xl p-8 border-t-4 border-t-blue-800 border-l border-r border-b border-gray-100 shadow-sm flex flex-col justify-center">
         <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Tech Arsenal Matrix</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -122,7 +141,7 @@ export const About: React.FC = () => {
           </div>
 
         </div>
-      </div>
+      </motion.div>
 
     </div>
   </section>

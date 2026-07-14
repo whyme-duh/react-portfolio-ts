@@ -1,7 +1,7 @@
 import React from 'react';
 import { useProjects } from './hooks/useProjects';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { easeIn, motion } from 'framer-motion';
 
 export const Projects: React.FC = () => {
     const { projects, loading, error } = useProjects();
@@ -11,9 +11,13 @@ export const Projects: React.FC = () => {
         
             <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                    <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
+                    <motion.h2 initial={{opacity : 0, x : -100}} 
+                        whileInView={{opacity: 1, x : 0}}
+                        viewport={{ once: true, margin: "-100px" }} 
+                        transition={{duration:0.5, ease:easeIn}} 
+                        className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
                         Featured Projects
-                    </h2>
+                    </motion.h2>
                     <div className="flex gap-1">
                         <div className="w-12 h-1.5 bg-red-800 rounded"></div>
                         <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
@@ -62,8 +66,11 @@ export const Projects: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div>
-                    {/* Tech Stack Array Mapping */}
+                <motion.div 
+                 initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }} 
+                    transition={{ duration: 0.5, delay: index * 0.1 }}>
                     <div className="flex flex-wrap justify-center items-center gap-2 mb-6">
                     {project.tech_stacks && project.tech_stacks.map((tech) => (
                         <span key={tech.id} className="px-2 py-1 bg-gray-50 border border-gray-200 rounded font-mono text-[10px] text-gray-600 uppercase tracking-wider">
@@ -96,7 +103,7 @@ export const Projects: React.FC = () => {
                     
                     </div>
                     
-                </div>
+                </motion.div>
                 </Link>
             ))}
             </div>

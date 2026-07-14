@@ -1,5 +1,6 @@
 import React from 'react';
 import { useExperience } from './hooks/useExperience';
+import { easeIn, motion } from 'framer-motion';
 
 export const Experience: React.FC = () => {
   const { experience, loading, error } = useExperience();
@@ -26,9 +27,11 @@ export const Experience: React.FC = () => {
     <section id="experience" className="py-12 px-4 md:px-16 max-w-6xl mx-auto bg-white">
       
       <div className="mb-16">
-    <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
+    <motion.h2 initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}  className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
       Professional Experience
-    </h2>
+    </motion.h2>
     <div className="flex gap-1">
       <div className="w-12 h-1.5 bg-blue-800 rounded"></div>
       <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
@@ -39,15 +42,19 @@ export const Experience: React.FC = () => {
   <div className="max-w-4xl mx-auto">
     <div className="relative border-l-2 border-gray-200 ml-2 md:ml-6 space-y-10">
       
-      {experience.map((exp) => (
+      {experience.map((exp, index) => (
         <div key={exp.id} className="relative pl-4 md:pl-12 group">
           
           {/* Timeline Dot (Sharper focus state) */}
           <div className="absolute -left-[9px] top-1.5 w-4 h-4 bg-white border-[3px] border-gray-300 group-hover:border-blue-800 rounded-full transition-colors duration-300"></div>
           
           {/* Content Card */}
-          <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-            
+          <motion.div 
+            initial={{opacity : 0, x : -100}} 
+            whileInView={{opacity: 1, x : 0}}
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{duration:0.5, ease:easeIn, delay:index * 0.1}} className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                
             {/* Header Grid: Role, Company, Year */}
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-1 pb-5 border-b border-gray-50">
               
@@ -76,7 +83,7 @@ export const Experience: React.FC = () => {
               {exp.description}
             </p>
             
-          </div>
+          </motion.div>
         </div>
       ))}
 

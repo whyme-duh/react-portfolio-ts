@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCertificate } from './hooks/useCertificate';
+import { easeIn, motion } from 'framer-motion';
 
 
 
@@ -28,9 +29,11 @@ export const Certifications: React.FC = () => {
         
         {/* Section Header */}
         <div className="mb-12">
-            <h2 className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
+            <motion.h2 initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}  className="text-3xl font-extrabold mb-3 tracking-tight text-gray-900">
             Verified Certifications
-            </h2>
+            </motion.h2>
             <div className="flex gap-1">
             <div className="w-12 h-1.5 bg-red-800 rounded"></div>
             <div className="w-4 h-1.5 bg-gray-900 rounded"></div>
@@ -50,8 +53,12 @@ export const Certifications: React.FC = () => {
 
             {/* Ledger Rows */}
             <div className="divide-y divide-gray-100">
-            {certification.map((cred) => (
-                <div 
+            {certification.map((cred, index) => (
+                <motion.div 
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{duration:0.5, ease:easeIn, delay: index * 0.01}}
                     key={cred.id} 
                     className="grid grid-cols-1 md:grid-cols-12 gap-4 p-6 hover:bg-gray-50 transition-colors items-center group"
                     >
@@ -95,7 +102,7 @@ export const Certifications: React.FC = () => {
                         </div>
                     </div>
 
-                </div>
+                </motion.div>
             ))}
             </div>
 
