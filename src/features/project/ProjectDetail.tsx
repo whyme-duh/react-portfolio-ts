@@ -45,41 +45,52 @@ export const ProjectDetail: React.FC = () => {
         </Link>
 
         {/* Header Metadata */}
-        <header className="mb-12 text-left">
+        <header className="mb-5 text-left">
           
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
             {project.name}
           </h1>
-          <div className="flex items-start gap-3 mb-4">
-            <span className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded border ${
+          <div className="flex items-start gap-3 mb-5" >
+              <span className={`px-2.5 py-2 text-xs font-bold  tracking-wider rounded border ${
                 project.status === 'Deployed' ? 'bg-green-50 text-green-700 border-green-200' : 
                 project.status === 'Under-Development' ? 'bg-orange-50 text-orange-700 border-orange-200' : 
                 'bg-blue-50 text-blue-600 border-blue-200'
-              }`}>
-              {project.status}
-            </span>
-            <span className="px-2.5 py-1 bg-gray-100 text-black text-[10px] font-bold uppercase tracking-widest rounded">
-              {project.category}
-            </span>
+                }`}>
+                {project.status}
+              </span>
+              <span className="px-2.5 py-2 bg-gray-100 text-black text-xs font-bold  tracking-widest rounded">
+                {project.category}
+              </span>
           </div>
+           
           <p className="text-xl text-gray-600 leading-relaxed">
             {project.brief_content}
           </p>
         </header>
 
-        {/* Content Body (Blog Style) */}
         <div className="prose prose-gray prose-lg max-w-none text-gray-800">
-          
-          <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900 text-left">Technical Inventory</h2>
-          <div className="flex flex-wrap gap-2 not-prose mb-12">
+          <h2 className="text-xl font-bold mt-5 mb-5 text-gray-900 text-left">Technical Inventory</h2>
+          <div className="flex flex-wrap gap-2 not-prose mb-5">
             {project.tech_stacks.map((tech) => (
               <span key={tech.id} className="px-3 py-1 bg-white border border-gray-200 rounded font-mono text-xs text-gray-600">
                 {tech.item}
               </span>
             ))}
           </div>
+          <div className="pb-4 pt-5 border-t border-gray-100 flex gap-4">
+              {project.category === "Mobile App" || project.view_link && (
+                <a href={project.view_link} className="px-6 py-3 bg-gray-900 text-white text-xs font-bold rounded hover:bg-gray-700 transition-colors">
+                  Launch Live Demo
+                </a>
+              )}
+              {project.source_code && (
+                <a href={project.source_code} className="px-6 py-3 bg-white border border-gray-200 text-gray-700 text-xs font-bold rounded hover:border-gray-400 transition-colors">
+                  View Source Code
+                </a>
+              )}
+            </div>
 
-          <h2 className="text-xl font-bold mt-12 mb-4 text-gray-900 text-left">Project Overview</h2>
+          <h2 className="text-xl font-bold mt-5 mb-4 text-gray-900 text-left">Project Overview</h2>
             
           <div 
             className="prose prose-lg prose-gray max-w-none text-justify prose-a:text-blue-800 hover:prose-a:text-blue-600 prose-headings:text-gray-900 prose-img:rounded-xl"
@@ -91,18 +102,7 @@ export const ProjectDetail: React.FC = () => {
         </div>
 
         {/* Footer Actions */}
-        <footer className="mt-20 pt-12 border-t border-gray-100 flex gap-4">
-          {project.category === "Mobile App" || project.view_link && (
-            <a href={project.view_link} className="px-6 py-3 bg-gray-900 text-white text-sm font-bold rounded hover:bg-blue-800 transition-colors">
-              Launch Live Demo
-            </a>
-          )}
-          {project.source_code && (
-            <a href={project.source_code} className="px-6 py-3 bg-white border border-gray-200 text-gray-700 text-sm font-bold rounded hover:border-gray-400 transition-colors">
-              View Source Code
-            </a>
-          )}
-        </footer>
+       
 
       </article>
     </div>

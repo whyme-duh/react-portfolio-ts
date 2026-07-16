@@ -83,10 +83,10 @@ export const Home: React.FC = () => {
                     transition={{duration:0.5, ease:easeIn, delay:0.3}}
                 className="flex gap-4">
                     
-                    <a href={bio.cv_file} download className="lg:px-6 px-4 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 border-blue-800 transition-colors">
+                    <a href={bio.cv_file} target='__blank'download className="lg:px-6 px-4 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:border-[#57e6eb] transition-colors">
                         VIEW MY RESUME
                     </a>
-                    <a href="#contact" className="px-6 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:bg-gray-50 transition-colors">
+                    <a href="#contact" className="px-6 py-2 border border-gray-300 text-gray-700 rounded text-sm font-bold tracking-wide hover:border-[#57e6eb] transition-colors">
                         CONTACT ME
                     </a>
                 </motion.div>
